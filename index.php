@@ -16,3 +16,9 @@ require $path;
 
 ?>
 
+<?php
+    $content = 'Page d\'accueil';
+    $title = '<h1>Gaming World</h1>' ;
+    include 'template.php' ; 
+    
+?>

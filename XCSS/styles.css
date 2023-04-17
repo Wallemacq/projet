@@ -12,6 +12,7 @@
  */
 :root {
   --bs-blue: #0d6efd;
+  --perso : #342896;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
   --bs-pink: #d63384;
@@ -591,7 +592,7 @@ progress {
   margin-top: -1rem;
   margin-bottom: 1rem;
   font-size: 0.875em;
-  color: #6c757d;
+  color: #48099c;
 }
 .blockquote-footer::before {
   content: "— ";
