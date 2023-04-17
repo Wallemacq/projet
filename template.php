@@ -17,7 +17,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="accueil.php">Accueil</a>
+                <a class="navbar-brand" href="accueil">Accueil</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -26,19 +26,19 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Magasin</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="touslesproduits.php">Tous les produits</a></li>
+                                <li><a class="dropdown-item" href="touslesproduits">Tous les produits</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="meilleursproduits.php">Meilleurs produits</a></li>
-                                <li><a class="dropdown-item" href="nouveauxproduits.php">Nouveaux produits</a></li>
+                                <li><a class="dropdown-item" href="meilleursproduits">Meilleurs produits</a></li>
+                                <li><a class="dropdown-item" href="nouveauxproduits">Nouveaux produits</a></li>
                             </ul>
                         </li>
                     </ul>
                     <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
+                        <a href="panier" class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
                             Panier <!-- Donc ceci est le panier -->
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
+                        </a>
                     </form>
                 </div>
             </div>
@@ -52,8 +52,10 @@
                     <div class="container">
                         <div class="row justify-content-center">
                         <div>
+                            <div style="text-align:center">
                                 <h1 class="display-4 fw-bolder"><?php  echo $title   ?></h1>
                                 <?php  echo $content   ?>
+                            </div>
                         </div>
                     </div>
                 </section>
