@@ -1,17 +1,24 @@
 <?php
+function getAllArticles() {
+    $host = "localhost";
+    $dbname = "projetpdw";
+    $username = "root";
+    $password = "";
 
-function getCartes() {
-    $bdd = new PDO('mysql:host=127.0.0.1;dbname=cours;charset=utf8', 'root', '');
-    $reponse = $bdd->query('SELECT nom_article,prix,description,image FROM article');
-    $articles = $reponse->fetchAll();
-    $reponse->closeCursor(); // Termine le traitement de la requête
-    return $articles;
+    try {
+        $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
+        $options = array(
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
+            PDO::ATTR_EMULATE_PREPARES => false,
+        );
+        $pdo = new PDO($dsn, $username, $password, $options);
+        
+        $stmt = $pdo->query("SELECT nom_article, prix, description, image FROM article");
+        $articles = $stmt->fetchAll();
+        return $articles;
+    } catch (PDOException $e) {
+        echo "Erreur de connexion : " . $e->getMessage();
     }
-
-function deleteUser() {
-    $bdd = new PDO('mysql:host=127.0.0.1;dbname=cours;charset=utf8', 'root', 'password');
-    $reponse = $bdd->prepare('DELETE FROM user WHERE id = :id');
-    $reponse->execute(array(':id' => $_GET['id']));
-}    
-
+}
 ?>
