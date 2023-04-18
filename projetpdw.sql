@@ -21,7 +21,7 @@ USE `projetpdw`;
 DROP TABLE IF EXISTS `article`;
 
 CREATE TABLE `article` (
-  `id_article` int(11) NOT NULL,
+  `id_article` int(11) NOT NULL AUTO_INCREMENT,
   `nom_article` varchar(255) NOT NULL,
   `prix` float NOT NULL,
   `description` varchar(255) NOT NULL,
@@ -30,9 +30,23 @@ CREATE TABLE `article` (
   PRIMARY KEY (`id_article`),
   KEY `FK_article__categorie` (`id_categorie`),
   CONSTRAINT `FK_article__categorie` FOREIGN KEY (`id_categorie`) REFERENCES `categorie` (`id_categorie`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `article` */
+
+insert  into `article`(`id_article`,`nom_article`,`prix`,`description`,`image`,`id_categorie`) values 
+(1,'poster',50,'Poster effet 2b RGB neon light','NeonLight.png',1),
+(2,'Corsair iCUE Nexus',109.94,'Corsair iCUE Nexus est le compagnon idéal de votre boîtier PC Corsair. Fonctionnant avec le logiciel Corsair iCUE, le iCUE Nexus vous permet de contrôler la configuration de votre système depuis une interface entièrement personnalisable.','boitierCorsair.png',2),
+(3,'poster neon light angry',50,'Poster effet 2b RGB neon light','NeonLightAngry.png',1),
+(4,'poster Petit Loup',39.99,'Poster du petit loup','petitLoup.png',1),
+(5,'poster du bateau des aubes',69.99,'Poster bateau pirate à l\'aube au départ des port pour partir aux larges','posterBateauAube.png',1),
+(6,'poster du bateau au crépuscule',69.99,'Poster bateau pirate au crépuscule avec une lune étrange sombrant dans les abysses','posterBateauEtrange.png',1),
+(7,'poster du bateau sombre',49.99,'Poster bateau pirate revenant du contiant pour venir faire un ravitaillment','posterBateauSombre.png',1),
+(8,'poster Final Fantaisy',49.99,'Poster Final Fantasy de la célèbre Tifa Rokkuhāto','posterFinalFantaisy.png',1),
+(9,'poster Final Fantaisy 7',49.99,'Poster Final Fantasy du célèbre Cloud Strife','posterFinalFantaisy7.png',1),
+(10,'poster PlayStation touche',29.99,'Poster touche neon light Playstaion','posterPlay.png',1),
+(11,'Clavier gaming',46.47,'SteelSeries Apex 3 TKL RVB Clavier gaming - Facteur de forme esports compact sans pavé numérique - Illumination RVB à 8 zones - Agencement Français AZERTY','clavierApex.png',2),
+(12,'Clavier balnc RGB',49.99,'TECURS Clavier Gaming Mécanique Filaire Gamer Clavier de Jeu PC RGB TKL AZERTY, Rechargeable 60% Clavier de Jeu/Rétroéclairé, Anti-Ghosting, Switchs Bleu pour Windows/Mac, Blanc','clavierWhite.png',2);
 
 /*Table structure for table `categorie` */
 
@@ -77,11 +91,11 @@ CREATE TABLE `commande_article` (
   `id_commande` int(11) NOT NULL,
   `id_article` int(11) NOT NULL,
   PRIMARY KEY (`id_commande_article`),
-  KEY `FK commande_article__commmande` (`id_commande`),
   KEY `FK commande_article__article` (`id_article`),
+  KEY `FK commande_article__commande` (`id_commande`),
   CONSTRAINT `FK commande_article__article` FOREIGN KEY (`id_article`) REFERENCES `article` (`id_article`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK commande_article__commmande` FOREIGN KEY (`id_commande`) REFERENCES `commande` (`id_commande`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK commande_article__statut` FOREIGN KEY (`id_commande_article`) REFERENCES `statut` (`id_statut`)
+  CONSTRAINT `FK commande_article__commande` FOREIGN KEY (`id_commande`) REFERENCES `commande` (`id_commande`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK commande_article__statut` FOREIGN KEY (`id_commande_article`) REFERENCES `statut` (`id_statut`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `commande_article` */
