@@ -185,7 +185,7 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>   
                                         <div class="bi-star-fill"></div>
                                     </div>
                                     <!-- Product price-->

@@ -30,9 +30,11 @@
                                 <li><hr class="dropdown-divider" /></li>
                                 <li><a class="dropdown-item" href="meilleursproduits">Meilleurs produits</a></li>
                                 <li><a class="dropdown-item" href="nouveauxproduits">Nouveaux produits</a></li>
+                                <li><a class="dropdown-item" href="ajoutarticle">Ajouter des articles</a></li>
                             </ul>
                         </li>
                     </ul>
+                    <!-- TODO :: test -->
                     <form class="d-flex">
                         <a href="panier" class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
@@ -46,7 +48,7 @@
         <!-- Header-->
         <header>
         <!-- class="bg-dark py-5" -->
-            <div style="text-align: center"><img src="XCSS\images\template.jpg" alt="Image" style="width:100%;height:300px;">
+            <div style="text-align: center"><img src="XCSS\images\template.jpg" alt="Image" style="width:100%;height:400px;">
             </header>       
                 <section id="content" class="py-5">
                     <div class="container">

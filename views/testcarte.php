@@ -11,7 +11,7 @@ ob_start();
                     <h5 class="card-title"><?php echo $article['nom_article']; ?></h5>
                     <p class="card-text"><?php echo $article['description']; ?></p>
                     <p class="card-text"><?php echo $article['prix'] . ' €'; ?></p>
-                    <a href="#" class="btn btn-primary">Acheter</a>
+                    <a href="panier.php?id=" class="btn btn-primary">Acheter</a>
                 </div>
             </div>
         </div>
