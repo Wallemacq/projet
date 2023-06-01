@@ -1,31 +1,52 @@
 <?php
-function loginold($username, $password) {
-    // Connexion à la base de données avec PDO
-    $pdo = new PDO('mysql:host=localhost;dbname=nomdelabasededonnees;charset=utf8', 'utilisateur', 'motdepasse');
+// Configuration de la base de données
+$host = 'localhost';
+$dbName = 'projetpdw';
+$username = 'root';
+$password = '';
+
+// Fonction de connexion à votre compte
+function seConnecter($login, $password) {
+    global $host, $dbName, $username, $password;
     
-    // Préparation de la requête pour récupérer les informations de l'utilisateur
-    $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE username = ?");
-    $stmt->execute([$username]);
-    $user = $stmt->fetch();
-    
-    // Vérification du mot de passe
-    if ($user && password_verify($password, $user['password'])) {
-        // Si le mot de passe est correct, on retourne les informations de l'utilisateur
-        return $user;
-    } else {
-        // Si le mot de passe est incorrect, on retourne false
-        return false;
+    try {
+        // Connexion à la base de données avec PDO
+        $pdo = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
+        
+        // Préparation de la requête SQL pour vérifier les identifiants
+        $query = $pdo->prepare("SELECT COUNT(*) AS count FROM users WHERE login = :login AND password = :password");
+        $query->bindParam(':login', $login);
+        $query->bindParam(':password', $password);
+        
+        // Exécution de la requête
+        $query->execute();
+        
+        // Récupération du résultat
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        
+        if ($result['count'] > 0) {
+            return true; // Connexion réussie
+        } else {
+            return false; // Identifiants incorrects
+        }
+    } catch (PDOException $e) {
+        echo "Erreur de connexion à la base de données : " . $e->getMessage();
+        return false; // Erreur de connexion à la base de données
     }
 }
 
-function login() {
-$pdo = new PDO('mysql:host=localhost;dbname=projetpdw;charset=utf8', 'root', '');
-$reponse = $bdd->query('SELECT * FROM USER WHERE login = "'.$_POST['login'].'"');
-$user = $reponse->fetch();
-if($user && password_verify($_POST['password'], $user['password'])) {
-    $_SESSION['login'] = $user['login'];
-    header('Location: /exercice8');
-    exit();
-}
+// Traitement du formulaire de connexion
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $login = $_POST["login"];
+    $password = $_POST["password"];
+    
+    // Appel de la fonction de connexion
+    if (seConnecter($login, $password)) {
+        // Redirection vers la page accueil.php
+        header("Location: accueil.php");
+        exit; // Terminer le script après la redirection
+    } else {
+        echo "Identifiants incorrects. Veuillez réessayer.";
+    }
 }
 ?>

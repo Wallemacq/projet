@@ -1,17 +1,18 @@
+
 <?php
-session_start();
+session_start(); // démarrer la session pour vérifier si l'utilisateur est connecté
 ob_start();
 ?>
-<form action="login.php" method="post">
-  <div class="mb-3">
-    <label for="login" class="form-label">Nom d'utilisateur</label>
-    <input type="text" class="form-control" id="login" name="login" required>
-  </div>
-  <div class="mb-3">
-    <label for="password" class="form-label">Mot de passe</label>
-    <input type="password" class="form-control" id="password" name="password" required>
-  </div>
-  <button type="submit" class="btn btn-primary">Se connecter</button>
+
+<!-- Formulaire HTML pour la connexion -->
+<form method="POST" action="">
+    <label for="login">Login :</label>
+    <input type="text" id="login" name="login" required><br><br>
+    
+    <label for="password">Mot de passe :</label>
+    <input type="password" id="password" name="password" required><br><br>
+    
+    <input type="submit" value="Se connecter">
 </form>
 
 <?php

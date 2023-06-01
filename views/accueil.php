@@ -2,12 +2,13 @@
 // echo "Vous êtes sur la page d'accueil vous pouvez vous connecetez/ vous inscrire / ou directement aller dans le shop";
 
  if(empty($_SESSION['login'])) { ?>
- <a href="login">
-  <img src="XCSS\images\Aconnexion.png" alt="Connexion" />
+ <a href="connexion">
+  <img src="XCSS\images\Aconnexion.png" alt="connexion" />
+  
 </a>
     <br><br>
-    <a href="register" id="register-link">
-   <img src="XCSS\images\Ainscription.png" alt="Inscription" onclick="window.location.href='register.php'">
+    <a href="inscription" >
+   <img src="XCSS\images\Ainscription.png" alt="Inscription" onclick="window.location.href='inscription.php'"/>
 </a>
 <?php } else { ?>
     Bienvenue <?php echo $_SESSION['login']; ?> !

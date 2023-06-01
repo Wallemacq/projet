@@ -22,15 +22,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="testcarte">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="meilleursproduits">Les meilleurs produits</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="nouveauxproduits">Nouveaux produits</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="ajoutarticle">Ajouter des articles</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Qui sommes nous?</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Magasin</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="touslesproduits">Tous les produits</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="meilleursproduits">Meilleurs produits</a></li>
-                                <li><a class="dropdown-item" href="nouveauxproduits">Nouveaux produits</a></li>
-                                <li><a class="dropdown-item" href="ajoutarticle">Ajouter des articles</a></li>
                             </ul>
                         </li>
                     </ul>
