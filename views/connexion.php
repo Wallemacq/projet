@@ -4,7 +4,7 @@ session_start();
 ob_start(); // démarrer la session pour vérifier si l'utilisateur est connecté
 ?>
 
-<form action="testcarte" method="post">
+<form action=connexion method="post">
         <label for="login">Login :</label>
         <input type="text" id="login" name="login" required>
         <br><br>

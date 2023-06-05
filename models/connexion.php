@@ -3,9 +3,9 @@
 function connecterUtilisateur($login, $motDePasse) {
     // Remplacez ces valeurs par les informations de connexion à votre base de données
     $serveur = "localhost";
-    $utilisateurDB = "votre_utilisateur";
-    $motDePasseDB = "votre_mot_de_passe";
-    $nomDB = "votre_base_de_donnees";
+    $utilisateurDB = "root";
+    $motDePasseDB = "";
+    $nomDB = "projetpdw";
 
     try {
         // Création de la connexion PDO à la base de données
@@ -19,7 +19,7 @@ function connecterUtilisateur($login, $motDePasse) {
 
         // Exécution de la requête
         $statement->execute();
-
+        
 
     }
 }
