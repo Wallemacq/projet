@@ -1,9 +1,10 @@
 
 <?php
-session_start(); // démarrer la session pour vérifier si l'utilisateur est connecté
+session_start();
+ob_start(); // démarrer la session pour vérifier si l'utilisateur est connecté
 ?>
 
-<form action="process.php" method="post">
+<form action="testcarte" method="post">
         <label for="login">Login :</label>
         <input type="text" id="login" name="login" required>
         <br><br>
